@@ -30,7 +30,7 @@ export default function SideBar() {
   };
 
   return (
-    <Box sx={{ display: 'flex', maxWidth: '152' }}>
+    <Box sx={{ display: 'flex', maxWidth: '152',   }}>
       {/* <CssBaseline /> */}
       <Drawer
         sx={{
@@ -43,6 +43,7 @@ export default function SideBar() {
             display: 'flex',
             flexDirection: 'column',
             padding: 0,
+            
           },
         }}
         variant="permanent"
@@ -61,7 +62,7 @@ export default function SideBar() {
                 sx={{
                   maxWidth: '100px',
                   flex: '1 1 auto',
-                  paddingY: 2,
+                  paddingY: 1,
                   paddingX: 0,
                   margin: 0,
                   background:selectedItem === index ? 'linear-gradient(to bottom, #18FFF1 0%, #0A78F3 100%)' : 'inherit',
