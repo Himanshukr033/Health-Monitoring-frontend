@@ -1,0 +1,471 @@
+ 
+   .overlap {
+    height: 1019px;
+    left: 221px;
+    position: absolute;
+    top: 61px;
+    width: 443px;
+  }
+  
+   .human-pattern {
+    height: 3px;
+    left: 69px;
+    position: absolute;
+    top: 967px;
+    width: 298px;
+  }
+  
+   .bottom-loading {
+    height: 196px;
+    left: 0;
+    position: absolute;
+    top: 823px;
+    width: 443px;
+  }
+  
+   .human-colored {
+    height: 969px;
+    left: 73px;
+    position: absolute;
+    top: 0;
+    width: 289px;
+  }
+  
+   .human-line {
+    background-image: url(./line-5.svg);
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 5px;
+    left: 286px;
+    overflow: hidden;
+    position: absolute;
+    top: 24px;
+    width: 270px;
+  }
+  
+   .rectangle {
+    background-color: #4a93b366;
+    filter: blur(6.2px);
+    height: 5px;
+    width: 271px;
+  }
+  
+   .overlap-2 {
+    margin-top:50px;
+    position: relative;
+  }
+  .sub-header{
+    display: flex;
+    justify-content: space-between;
+
+  }
+   .sub-date-and-export {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+  
+   .text-wrapper-5 {
+    color: var(--dimmed-gray);
+    font-family: "Inder-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+.graph {
+    
+  }
+  
+.graph-2 {
+    left: 5px;
+    position: relative;
+    top: 98px;
+  }
+  
+   .overlap-group-2 {
+    /* height: 211px; */
+    left: 405px;
+    position: absolute;
+    /* top: -2px;
+    width: 729px; */
+  }
+  
+   .line-2 {
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 144px;
+    width: 729px;
+    color: red;
+  }
+  
+   .vector {
+    height: 211px;
+    left: 192px;
+    position: absolute;
+    top: 0;
+    width: 434px;
+  }
+  
+   .vector-2 {
+    height: 202px;
+    left: 178px;
+    position: absolute;
+    top: 9px;
+    width: 434px;
+  }
+  
+   .line-3 {
+    height: 4px;
+    left: 646px;
+    position: absolute;
+    top: 254px;
+    width: 384px;
+    color: red;
+  }
+  
+   .line-4 {
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 142px;
+    width: 322px;
+    color: red;
+  }
+  
+   .frame-4 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 21px;
+    left: 0;
+    position: absolute;
+    top: 13px;
+  }
+  
+   .frame-5 {
+    align-items: flex-end;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 60px;
+    position: relative;
+  }
+  
+   .text-wrapper-6 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    height: 23px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: 81px;
+  }
+  
+   .text-wrapper-7 {
+    color: var(--sky-blue);
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    height: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: 68px;
+  }
+  
+   .p {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    height: 95px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 163px;
+    width: 322px;
+  }
+  
+   .overlap-wrapper {
+    
+  }
+  
+   .overlap-3 {
+    height: 289px;
+    left: -11px;
+    position: relative;
+    top: 101px;
+    width: 1165px;
+  }
+  
+   .frame-6 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 43px;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+  
+   .frame-7 {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 20px;
+    position: relative;
+  }
+  
+   .text-wrapper-8 {
+    color: var(--dimmed-gray);
+    font-family: "Inder-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    height: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    text-align: right;
+    width: 61px;
+  }
+  
+   .line-5 {
+    height: 1px;
+    object-fit: cover;
+    position: relative;
+    width: 1073px;
+  }
+  
+.frame-wrapper {
+    height: 227px;
+    left: 158px;
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    width: 1007px;
+  }
+  
+.frame-8 {
+    align-items: flex-end;
+    display: flex;
+    gap: 71px;
+    justify-content: center;
+    padding: 0px 0px 0px 1px;
+    position: relative;
+    top: 10px;
+    width: 1007px;
+  }
+.rectangle-2 {
+    background: linear-gradient(180deg, rgb(74, 147, 179) 0%, rgb(1.57, 3.19, 3.9) 100%);
+    height: 124px;
+    margin-left: -1.5px;
+    position: relative;
+    width: 37px;
+  }
+  
+.rectangle-3 {
+    background: linear-gradient(180deg, rgb(74, 147, 179) 0%, rgb(1.57, 3.19, 3.9) 100%);
+    height: 227px;
+    position: relative;
+    width: 37px;
+  }
+  
+.rectangle-4 {
+    background: linear-gradient(180deg, rgb(74, 147, 179) 0%, rgb(1.57, 3.19, 3.9) 100%);
+    height: 182px;
+    position: relative;
+    width: 37px;
+  }
+  
+.rectangle-5 {
+    background: linear-gradient(180deg, rgb(190.53, 51.07, 51.07) 0%, rgb(1.57, 3.19, 3.9) 100%);
+    height: 56px;
+    position: relative;
+    width: 37px;
+  }
+  
+.rectangle-6 {
+    background: linear-gradient(180deg, rgb(74, 147, 179) 0%, rgb(1.57, 3.19, 3.9) 100%);
+    height: 139px;
+    position: relative;
+    width: 37px;
+  }
+  
+.rectangle-7 {
+    background: linear-gradient(180deg, rgb(74, 147, 179) 0%, rgb(1.57, 3.19, 3.9) 100%);
+    height: 99px;
+    position: relative;
+    width: 37px;
+  }
+  
+.rectangle-8 {
+    background: linear-gradient(180deg, rgb(190.53, 51.07, 51.07) 0%, rgb(1.57, 3.19, 3.9) 100%);
+    height: 39px;
+    position: relative;
+    width: 37px;
+  }
+  
+.rectangle-9 {
+    background: linear-gradient(180deg, rgb(74, 147, 179) 0%, rgb(1.57, 3.19, 3.9) 100%);
+    height: 218px;
+    position: relative;
+    width: 37px;
+  }
+  
+.rectangle-10 {
+    background: linear-gradient(180deg, rgb(74, 147, 179) 0%, rgb(1.57, 3.19, 3.9) 100%);
+    height: 163px;
+    position: relative;
+    width: 37px;
+  }
+  
+.rectangle-11 {
+    background: linear-gradient(180deg, rgb(209, 204, 113) 0%, rgb(1.57, 3.19, 3.9) 100%);
+    height: 87px;
+    margin-right: -1.5px;
+    position: relative;
+    width: 37px;
+  }
+  
+
+  
+.text-wrapper-9 {
+    color: #ffffff;
+    font-family: "Inika-Bold", Helvetica;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    flex-grow: 2;
+  }
+  
+   .date-and-export {
+    align-items: center;
+    display: inline-flex;
+    gap: 265px;
+    justify-content: flex-end;
+    left: 1303px;
+    position: absolute;
+    top: 43px;
+  }
+  
+   .export-button-instance {
+    border-color: #5f4ab3 !important;
+  }
+  
+   .header {
+    height: 69px;
+    left: 735px;
+    position: absolute;
+    top: 31px;
+    width: 303px;
+  }
+  
+   .text-wrapper-10 {
+    color: #ffffff;
+    font-family: "Inika-Bold", Helvetica;
+    font-size: 32px;
+    font-weight: 700;
+    height: 69px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: -1px;
+    width: 303px;
+  }
+  
+   .box {
+    height: 172px;
+    left: 1332px;
+    position: absolute;
+    top: 860px;
+    width: 527px;
+  }
+  
+   .box-2 {
+    height: 171px;
+    left: 729px;
+    position: absolute;
+    top: 859px;
+    width: 382px;
+  }
+  
+   .head-graph {
+    align-items: flex-start;
+    display: flex;
+    gap: 91px;
+}
+  
+.meter-instance {
+    height: 240px !important;
+    position: relative !important;
+    width: 300px !important;
+  }
+  
+   .design-component-instance-node {
+    left: 78px !important;
+  }
+  
+   .meter-2 {
+    color: var(--yellow) !important;
+  }
+  
+   .menu {
+    background-color: #10101c;
+    height: 1080px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 152px;
+  }
+  
+   .overlap-4 {
+    height: 984px;
+    left: 16px;
+    position: relative;
+    top: 48px;
+    width: 128px;
+  }
+  
+   .selection-prediction {
+    height: 108px;
+    left: 10px;
+    position: absolute;
+    top: 700px;
+    width: 108px;
+  }
+  
+   .menu-selection {
+    height: 108px;
+    left: 0;
+    position: absolute;
+    top: 385px;
+    width: 128px;
+  }
+  
+   .menu-icons {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 35px;
+    justify-content: center;
+    left: 10px;
+    position: absolute;
+    top: 0;
+  }
+  
+   .frame-9 {
+    flex: 0 0 auto;
+    position: relative;
+  }
+  
