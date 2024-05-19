@@ -36,7 +36,7 @@ function Setting() {
               overflow:'hidden'
             }}
           >
-            <Dials value1="12" value2="43" value3="82"/>
+            <Dials value1="12" value2="43" value3="12"/>
           </div>
           <div
             style={{

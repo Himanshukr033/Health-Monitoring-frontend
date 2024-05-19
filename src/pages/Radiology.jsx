@@ -36,7 +36,7 @@ function Radiology() {
               overflow:'hidden'
             }}
           >
-            <Dials value1="95" value2="0" value3="70"/>
+            <Dials value1="95" value2="0" value3="18"/>
           </div>
           <div
             style={{

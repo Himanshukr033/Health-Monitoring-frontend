@@ -20,7 +20,7 @@ export const Meter = ({
   intersect = "../../assets/Intersect.svg",
 }) => {
 
- 
+ const percent = (parseFloat(value)/parseFloat(text2))*100;
   
   return (
     <div className={`meter ${className}`}>
@@ -53,7 +53,7 @@ export const Meter = ({
           alt="Intersect"
           src={intersect}
         />
-       <Gauge percent={value} colors={divClassName ? ["#D1CC71", "#d9e19f"] : undefined} />
+       <Gauge percent={percent} colors={divClassName ? ["#D1CC71", "#d9e19f"] : undefined} />
 
         
 

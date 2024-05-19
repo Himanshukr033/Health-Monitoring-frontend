@@ -36,7 +36,7 @@ function General() {
               overflow:'hidden'
             }}
           >
-            <Dials value1="12" value2="56" value3="75"/>
+            <Dials value1="12" value2="56" value3="15"/>
           </div>
           <div
             style={{

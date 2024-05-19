@@ -36,7 +36,7 @@ function Cardiology() {
               overflow:'hidden'
             }}
           >
-            <Dials value1="95" value2="25" value3="70"/>
+            <Dials value1="95" value2="25" value3="10"/>
           </div>
           <div
             style={{

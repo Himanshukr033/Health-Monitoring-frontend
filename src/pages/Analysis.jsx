@@ -36,7 +36,7 @@ function Analysis() {
               overflow:'hidden'
             }}
           >
-           <Dials value1="95" value2="25" value3="70"/>
+           <Dials value1="95" value2="25" value3="19"/>
           </div>
           <div
             style={{

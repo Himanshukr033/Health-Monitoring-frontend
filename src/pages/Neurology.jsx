@@ -36,7 +36,7 @@ function Neurology() {
               overflow:'hidden'
             }}
           >
-            <Dials value1="92" value2="25" value3="42"/>
+            <Dials value1="92" value2="25" value3="22"/>
           </div>
           <div
             style={{
