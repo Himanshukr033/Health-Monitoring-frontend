@@ -7,7 +7,12 @@ import ellipse2 from '../assets/Ellipse 3.svg';
 import ellipse3 from '../assets/Ellipse 3-1.svg';
 import ellipse4 from '../assets/Ellipse 3-2.svg';
 
-const Dials = () => {
+const Dials = ({
+  value1,
+  value2,
+  value3
+}) => {
+  console.log(value1);
   return (  
         <div style={{display:'flex', }}>
         <Meter
@@ -17,7 +22,7 @@ const Dials = () => {
           intersect={intersect}
           rotate={ellipse2}
           rotation="zero"
-          value="12"
+          value={value1}
           text="bpm"
           text1="Heart rate"
           text2="220"
@@ -32,7 +37,7 @@ const Dials = () => {
           intersect={intersect}
           rotate={ellipse3}
           rotation="zero"
-          value="12"
+          value={value2}
           text="mm/kg"
           text1="Systemic PP"
           text2="120"
@@ -43,7 +48,7 @@ const Dials = () => {
           intersect={intersect}
           rotate={ellipse4}
           rotation="zero"
-          value="12"
+          value={value3}
           text="mm/kg"
           text1="Puimonary PP"
           text2="40"

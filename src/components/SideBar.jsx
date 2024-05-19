@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from "react";
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -18,16 +18,29 @@ import lungs from '../assets/lungs.png';
 import neurons from '../assets/Neuron.png';
 import settings from '../assets/settings.png';
 import xray from '../assets/xray.png';
+import { useNavigate,useLocation  } from 'react-router-dom';
 
 const drawerWidth = 122;
 
 export default function SideBar() {
+  const navigate = useNavigate();
+  const navPaths = ["general", "optometry", "neurology", "pulmonology", "","radiology", "dermatology", "analysis", "help", "setting"];
   const imagePaths = [general, eye, neurons, lungs, heart, xray, hair, analysis, help, settings];
-  const [selectedItem, setSelectedItem] = React.useState(4);
+  const [selectedItem, setSelectedItem] = useState();
+
+  useEffect(() => {
+    const currentPath = location.pathname.substring(1); 
+    const selectedIndex = navPaths.indexOf(currentPath);
+    setSelectedItem(selectedIndex === -1 ? 4 : selectedIndex); 
+  }, [location.pathname]);
 
   const handleItemClick = (index) => {
+    const nav = navPaths[index];
+    navigate(`/${nav}`);
     setSelectedItem(index);
   };
+
+  
 
   return (
     <Box sx={{ display: 'flex', maxWidth: '152',   }}>

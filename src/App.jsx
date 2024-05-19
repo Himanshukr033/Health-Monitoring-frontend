@@ -1,66 +1,34 @@
 import "./App.css";
-import Header from "./components/Header";
-import Model from "./components/Model";
-import SideBar from "./components/SideBar";
-import Dials from "./components/Dials";
-import Graphs from "./components/Graphs";
-import heart from "./assets/heart monitor.png"
-import Footer from "./components/Footer";
+
+import { Routes, Route } from "react-router-dom";
+import * as React from "react";
+import General from "./pages/General";
+import Cardiology from "./pages/Cardiology";
+import Neurology from "./pages/Neurology";
+import Pulmonology from "./pages/Pulmonology";
+import Radiology from "./pages/Radiology";
+import Dermatology from "./pages/Dermatology";
+import Analysis from "./pages/Analysis";
+import Help from "./pages/Help";
+import Setting from "./pages/Setting";
+import Optometry from "./pages/Optometry";
+
 
 function App() {
   return (
-    <>
-      <SideBar />
-      <div
-        style={{
-          display: "flex",
-          height: "100vh",
-          overflow:'hidden'
-        }}
-      >
-        <Model />
-        <div
-          style={{
-            margin: "10px 0px 0px 80px",
-            display: "flex",
-            flexDirection: "column",
-            padding: 0,
-            overflow:'hidden'
-          }}
-        >
-          <Header />
-          <div
-            style={{
-              flex: 2,
-              display: "flex",
-              overflow:'hidden'
-            }}
-          >
-            <Dials />
-          </div>
-          <div
-            style={{
-              flex: 2,
-              display: "flex",
-              overflow:'hidden'
-            }}
-          >
-            <Graphs />
-          </div>
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems:"center",
-              overflow:'hidden'
-            }}
-          >
-            <Footer/>
-          </div>
-        </div>
-      </div>
-      
-    </>
+    <Routes>
+      index
+    <Route path="/" element={<Cardiology />}/>
+    <Route path="/general" element={<General/>}/>
+    <Route path="/optometry" element={<Optometry/>}/>
+    <Route path="/neurology" element={<Neurology />}/>
+    <Route path="/pulmonology" element={<Pulmonology />}/>
+    <Route path="/radiology" element={<Radiology />}/>
+    <Route path="/dermatology" element={<Dermatology />}/>
+    <Route path="/analysis" element={<Analysis />}/>
+    <Route path="/help" element={<Help />}/>
+    <Route path="/setting" element={<Setting />}/>
+  </Routes>
   );
 }
 
