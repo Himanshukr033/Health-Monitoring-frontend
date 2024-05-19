@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import "./style.css";
+import Gauge from "./Gauge";
 
 export const Meter = ({
   rotation,
@@ -18,6 +19,9 @@ export const Meter = ({
   divClassName2,
   intersect = "../../assets/Intersect.svg",
 }) => {
+
+ 
+  
   return (
     <div className={`meter ${className}`}>
       <div className="overlap-group">
@@ -49,6 +53,10 @@ export const Meter = ({
           alt="Intersect"
           src={intersect}
         />
+       <Gauge percent={value} colors={divClassName ? ["#D1CC71", "#d9e19f"] : undefined} />
+
+        
+
       </div>
     </div>
   );
