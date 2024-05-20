@@ -19,6 +19,7 @@ import neurons from '../assets/Neuron.png';
 import settings from '../assets/settings.png';
 import xray from '../assets/xray.png';
 import { useNavigate,useLocation  } from 'react-router-dom';
+import { useNavigation } from '../context API/NavigationContext';
 
 const drawerWidth = 122;
 
@@ -27,7 +28,8 @@ export default function SideBar() {
   const navPaths = ["general", "optometry", "neurology", "pulmonology", "","radiology", "dermatology", "analysis", "help", "setting"];
   const imagePaths = [general, eye, neurons, lungs, heart, xray, hair, analysis, help, settings];
   const [selectedItem, setSelectedItem] = useState();
-
+  const location = useLocation();
+  const { navigateWithAnimation } = useNavigation();
   useEffect(() => {
     const currentPath = location.pathname.substring(1); 
     const selectedIndex = navPaths.indexOf(currentPath);
@@ -36,8 +38,12 @@ export default function SideBar() {
 
   const handleItemClick = (index) => {
     const nav = navPaths[index];
-    navigate(`/${nav}`);
-    setSelectedItem(index);
+    navigateWithAnimation(nav);
+    
+    // setTimeout(()=>{
+    //   navigate(`/${nav}`);
+    //   setSelectedItem(index);
+    // },1200)
   };
 
   

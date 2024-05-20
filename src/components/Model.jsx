@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion, AnimatePresence ,useAnimation } from 'framer-motion';
 import heart from "../assets/heart-rotate.png";
 import human from "../assets/human pattern.png";
 import line from "../assets/Human line.png";
@@ -8,57 +8,62 @@ import ellipse2 from "../assets/Ellipse 13.png";
 import ellipse1 from "../assets/Ellipse 11.png";
 import mainHeart from "../assets/main_heart.png";
 import "./style.css";
+import { useLocation, useNavigate  } from 'react-router-dom';
+import { useNavigation } from '../context API/NavigationContext';
 
 const Model = () => {
   const lineControls = useAnimation();
   const modelControls = useAnimation();
   const heartControls = useAnimation();
-  const [isLineRevealed,setIsLineRevealed] = useState(false);
-
-  useEffect(()=> {
-    if (isLineRevealed) {
-      lineControls.start({ width:5000, transition: { duration: 5 } });
-      } else {
-        console.log('afterClose')
-      }
-   
-    
-  }, [isLineRevealed, lineControls])
-
-  
-  const onComplete = () => {
-    setIsLineRevealed(true)
-  }
+  const location = useLocation();
+  const currentPath = location.pathname.substring(1); 
+  const { isExiting, setIsExiting, nextPath } = useNavigation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function sequence() {
-      await lineControls.start({ y: 0, opacity: 1, transition: { duration: 1 } });
-      await setTimeout(() => {
-        setIsLineRevealed(true);
-      }, 1);
-      await modelControls.start({ opacity: 1, y: 0, transition: { duration: 0.5 } });
-
-
-      await heartControls.start({ rotate: -30, opacity: 1, transition: { duration: 1 } });
+      lineControls.start({ y: 0, opacity: 1, transition: { duration: 1 } });
+      await modelControls.start({ height: 0, transition: { duration: 1.1 } });
+      await lineControls.start({ x:-400, transition: { duration: 1} });
+      await heartControls.start({ rotate: 30, opacity: 1, transition: { duration: 0.8 } });
     }
     sequence();
   }, [lineControls, modelControls, heartControls]);
 
+  useEffect(() => {
+    async function exitAni() {
+    if (isExiting) {
+      await lineControls.start({ x:0, transition: { duration: 1 } });
+      await heartControls.start({ rotate: -30, opacity: 0.3, transition: { duration: 0.5 } });
+      lineControls.start({ y: '100vh',transition: { duration: 1 } });
+      modelControls.start({ height: '100vh',position:'fixed',top:0, left:160, transition: { duration: 1.1 } }).then(() => {
+        setIsExiting(false);
+        navigate(`/${nextPath}`);
+      });
+    }
+  }
+  exitAni();
+  }, [heartControls, isExiting, lineControls, navigate, nextPath, setIsExiting]);
+
+
+
   return (
     <div style={{ height: '100vh', width: '20vw', padding: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <AnimatePresence mode='wait'>
+        <motion.div
+        key={`${currentPath}-line`}
+          initial={{ y: '100vh',x:0 ,opacity: 0, width:250 }}
+          animate={lineControls}
+          style={{ zIndex: 5 }}
+          exit={{ y: '100vh', opacity: 0, x:0, transition:{duration:1} }}
+          >
+          <img src={line} alt="human line" />
+        </motion.div>
+      </AnimatePresence>
       <motion.div
-        initial={{ y: '100vh', opacity: 0, width:250 }}
-        animate={lineControls}
-        style={{ zIndex: 5 }}
-        onAnimationComplete={() => {onComplete}}
-      >
-        <img src={line} alt="human line" />
-      </motion.div>
-      <motion.div
-      initial={{ height: '100vh', width:'20vw', backgroundColor: '#0D0E17' }}
-      animate={{ height: 0 }}
-      transition={{ duration: 1.2 }} 
-      style={{ zIndex: 2, position: 'fixed', top: 0, left: 160, right: 0 }}
+      initial={{ height: '100vh', position:'fixed',top:0, left:160 }}
+      animate={modelControls}
+      style={{ zIndex: 2,width:'20vw', backgroundColor: '#0D0E17', }}
     />
         
       <motion.div
@@ -89,7 +94,7 @@ const Model = () => {
               <motion.img 
               initial={{ opacity: 0 }}
               animate={{ opacity:1 }}
-              transition= { {duration: 1, delay:1 }}
+              transition= { {duration: 0.5, delay:1.9 }}
               src={mainHeart} alt='heart-main' style={{ position: "absolute", zIndex: 1, height: '15vh', aspectRatio: 1 }} />
             </div>
           </div>

@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "./style.css";
 import Gauge from "./Gauge";
+import { useNavigation } from '../../context API/NavigationContext';
 
 export const Meter = ({
   rotation,
@@ -19,8 +20,53 @@ export const Meter = ({
   divClassName2,
   intersect = "../../assets/Intersect.svg",
 }) => {
+  const [currentValue, setCurrentValue] = useState(0);
+  const [currentPercent, setCurrentPercent] = useState(0);
+  const maxValue = parseFloat(value);
+  const { isExiting} = useNavigation();
 
- const percent = (parseFloat(value)/parseFloat(text2))*100;
+ useEffect(() => {
+  if (!isExiting) {
+  const animationDuration = 1;
+  const framesPerSecond = 60; 
+  const totalFrames = animationDuration * framesPerSecond;
+  const increment = maxValue / totalFrames;
+
+  const updateValue = () => {
+    setCurrentValue((prevValue) => {
+      const newValue = Math.min(prevValue + increment, maxValue);
+      setCurrentPercent(newValue/parseFloat(text2)*100);
+      return newValue;
+    });
+  };
+
+  const intervalId = setInterval(updateValue, 1000 / framesPerSecond);
+
+  return () => clearInterval(intervalId);
+}
+}, [isExiting, maxValue, text2, value]);
+
+useEffect(() => {
+    if (isExiting) {
+      const animationDuration = 0.1;
+      const framesPerSecond = 60;
+      const totalFrames = animationDuration * framesPerSecond;
+      const decrement = currentValue / totalFrames;
+
+      const updateValue = () => {
+        setCurrentValue((prevValue) => {
+          const newValue = Math.max(prevValue - decrement, 0);
+          setCurrentPercent(newValue/parseFloat(text2)*100);
+          return newValue;
+        });
+      };
+
+      const intervalId = setInterval(updateValue, 1000 / framesPerSecond);
+
+      return () => clearInterval(intervalId);
+    }
+  }, [isExiting, currentPercent, currentValue, text2]);
+
   
   return (
     <div className={`meter ${className}`}>
@@ -35,7 +81,7 @@ export const Meter = ({
         <div className={`frame-2 ${frameClassName}`}>
           <div className="frame-3">
             <div className="frame-3">
-              <div className={`text-wrapper-2 ${divClassName}`}>{value}</div>
+              <div className={`text-wrapper-2 ${divClassName}`}>{currentValue.toFixed(0)}</div>
               <div className={`text-wrapper-3 ${divClassNameOverride}`}>/</div>
             </div>
             <div className="mm-kg-wrapper">
@@ -53,7 +99,7 @@ export const Meter = ({
           alt="Intersect"
           src={intersect}
         />
-       <Gauge percent={percent} colors={divClassName ? ["#D1CC71", "#d9e19f"] : undefined} />
+       <Gauge percent={currentPercent} colors={divClassName ? ["#D1CC71", "#d9e19f"] : undefined} />
 
         
 

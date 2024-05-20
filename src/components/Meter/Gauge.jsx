@@ -8,28 +8,6 @@ const Gauge = ({
   colors = ["#1267ff", "#98c0ff"],
   ...rest
 }) => {
-  const [currentPercent, setCurrentPercent] = useState(0);
-
-  useEffect(() => {
-    const animationDuration = 1; 
-    const framesPerSecond = 20; 
-    const totalFrames = animationDuration * framesPerSecond;
-    const increment = percent / totalFrames; 
-
-    
-    const updatePercentage = () => {
-      setCurrentPercent((prevPercent) => {
-        const newPercent = Math.min(prevPercent + increment, percent);
-        return newPercent;
-      });
-    };
-
-   
-    const intervalId = setInterval(updatePercentage, 1000 / framesPerSecond);
-
-    
-    return () => clearInterval(intervalId);
-  }, [percent]);
 
   const strokeWidth = radius * arcWidth;
   const innerRadius = radius - strokeWidth;
@@ -37,7 +15,7 @@ const Gauge = ({
   const arc = circumference * 0.75;
   const dashArray = `${arc} ${circumference}`;
   const transform = `rotate(135, ${radius}, ${radius})`;
-  const offset = arc - (currentPercent / 100) * arc;
+  const offset = arc - (percent / 100) * arc;
 
   const gradientId = `grad-${Math.random()}`;
 
