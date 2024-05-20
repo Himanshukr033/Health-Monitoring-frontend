@@ -22,13 +22,16 @@ const Model = () => {
 
   useEffect(() => {
     async function sequence() {
-      lineControls.start({ y: 0, opacity: 1, transition: { duration: 1 } });
-      await modelControls.start({ height: 0, transition: { duration: 1.1 } });
-      await lineControls.start({ x:-400, transition: { duration: 1} });
-      await heartControls.start({ rotate: 30, opacity: 1, transition: { duration: 0.8 } });
+      if(!isExiting){
+
+        lineControls.start({ y: 0, opacity: 1, transition: { duration: 1 } });
+        await modelControls.start({ height: 0, transition: { duration: 1.1 } });
+        await lineControls.start({ x:-400, transition: { duration: 1} });
+        await heartControls.start({ rotate: 30, opacity: 1, transition: { duration: 0.8 } });
+      }
     }
     sequence();
-  }, [lineControls, modelControls, heartControls]);
+  }, [lineControls, modelControls, heartControls, isExiting]);
 
   useEffect(() => {
     async function exitAni() {
