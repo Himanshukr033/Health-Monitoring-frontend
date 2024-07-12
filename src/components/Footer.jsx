@@ -21,11 +21,11 @@ export const Footer = () => {
         <div style={{display:"flex",flexDirection:"column", marginLeft:'10px', justifyContent:'space-around', fontSize:'12px'}}>
             <div style={{display:"flex", gap:'10px'}}>
                 <EmailIcon/>
-                himanshukr033@gmail.com
+                himanshukumar@project.com
             </div>
             <div style={{display:"flex", gap:'10px'}}>
                 <CallIcon/>
-                8235861628
+                1234567890
             </div>
         </div>
         
